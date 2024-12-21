@@ -15,7 +15,7 @@ const serverPrivateKeyPem = process.env.SERVER_PRIVATE_KEY;
 const serverPublicKeyPem = process.env.SERVER_PUBLIC_KEY;
 const dNetwork = process.env.NODE_ENV;
 
-let MAIN_DIR = "/program-NtemKenyor/backend";
+let MAIN_DIR = "/clouds_lite/backend";
 
 app.use(cors());
 app.use(express.json());
@@ -129,47 +129,7 @@ app.post(MAIN_DIR+"/api/create-post", async (req, res) => {
     }
 });
 
-/* app.post("/api/create-post", async (req, res) => {
-    const { encryptedPrivateKey, publicKey, title, content, image_url, author, date, others } = req.body;
 
-    if (!encryptedPrivateKey || !publicKey || !title || !content) {
-        return res.status(400).json({ error: "Missing required fields" });
-    }
-
-    try {
-        // Verify the public key matches the server's expected public key
-        const expectedPublicKey = forge.pki.publicKeyFromPem(publicKey);
-        const serverPublicKeyPem = forge.pki.publicKeyToPem(expectedPublicKey);
-        
-
-        console.log(publicKey);
-        console.log("--------------the next one below -------------")
-        console.log(serverPublicKeyPem)
-
-        if (serverPublicKeyPem !== publicKey) {
-            return res.status(403).json({ error: "Invalid encryption public key" });
-        }
-
-        // Decrypt user's private key using server's private key
-        const privateKey = forge.pki.privateKeyFromPem(serverPrivateKeyPem);
-        const decryptedPrivateKey = privateKey.decrypt(encryptedPrivateKey, "RSA-OAEP");
-
-
-        console.log(decryptedPrivateKey);
-
-        // Use the decrypted private key to create the user's Keypair
-        const userKeypair = Keypair.fromSecretKey(Uint8Array.from(JSON.parse(decryptedPrivateKey)));
-        const metadata = new PostMetadata({ title, content, image_url, author, date, others });
-
-        // Proceed to create the post on the blockchain
-        const signature = await createPost(userKeypair, metadata);
-        res.json({ message: "Post created successfully", signature });
-    } catch (err) {
-        console.error("Error creating post:", err);
-        res.status(500).json({ error: "Failed to create post" });
-    }
-});
- */
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });

@@ -7,9 +7,6 @@ const { serialize } = require("borsh");
 // const programId = new PublicKey("CYuj8Uxj9dVzEN5Gi6SVzfbEHjcfwuDLCtYpvZ7tYnqz");
 const programId = new PublicKey("7sGT7oBKSetii8mspduzWR8EeYq86z51v9BdwfkEW2Wr");
 
-// const connection = new Connection("http://127.0.0.1:8899", "confirmed");
-// const connection = new Connection("https://spring-quick-surf.solana-devnet.quiknode.pro/016ff48f0f7c3f1520e515c01dca9a83ef528317", "confirmed");
-
 // Define the PostMetadata class with UTC timestamp support
 class PostMetadata {
     constructor({ title, content, image_url, author, date = getUtcTimestamp(), others }) {

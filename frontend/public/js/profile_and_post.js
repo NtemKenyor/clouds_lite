@@ -650,9 +650,9 @@ if (
 } else {
     // Use live URLs
     // window.NODE_URL = "https://roynek.com/cloudS/interact/backend";
-    window.NODE_URL = "http://localhost:3000/program-NtemKenyor/backend"; // jUST NODE LOCALHOST TO TEST HERE..
-    // window.PHP_URL = "https://roynek.com/cloudS/interact/server";
-    // window.connection = new solanaWeb3.Connection('https://spring-quick-surf.solana-devnet.quiknode.pro/016ff48f0f7c3f1520e515c01dca9a83ef528317 ', 'confirmed');
+    // window.NODE_URL = "http://localhost:3000/program-NtemKenyor/backend"; // jUST NODE LOCALHOST TO TEST HERE..
+    window.PHP_URL = "https://roynek.com/cloudS/interact/server";
+    window.connection = new solanaWeb3.Connection('https://spring-quick-surf.solana-devnet.quiknode.pro/016ff48f0f7c3f1520e515c01dca9a83ef528317 ', 'confirmed');
 }
 
 // Log the current URLs being used for easy tracking
