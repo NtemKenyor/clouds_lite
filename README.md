@@ -118,7 +118,7 @@ CloudS divides its operations into three core parts:
    ```
 *Please understand that you may need to adjust the variables to meet your URL standard(if necessary). You can alway make a deep search across files and replace for testing purposes.*
 ```
-'window.NODE_URL = "http://localhost:3000/cloudS/interact/backend";
+'window.NODE_URL = "http://localhost:3000/clouds_lite/backend";
 
 window.PHP_URL = "http://localhost/cloudS/interact/server";
 ```
