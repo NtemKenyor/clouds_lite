@@ -1,4 +1,78 @@
-// fetchMetadata.js
+const { exec } = require('child_process');
+
+/**
+ * Fetch data using the QuickNode API via the curl command.
+ *
+ * @param {string} apiKey - The API key for authentication.
+ * @returns {Promise<string>} - The response from the API.
+ */
+function fetchDataWithCurl(apiKey) {
+    return new Promise((resolve, reject) => {
+        const curlCommand = `
+            curl -X POST "https://api.quicknode.com/functions/rest/v1/functions/383e033e-937a-4338-8e7a-129e357baed5/call?result_only=true" \
+            -H "accept: application/json" \
+            -H "Content-Type: application/json" \
+            -H "x-api-key: ${apiKey}" \
+            -d '{"network": "solana-devnet", "dataset": "block", "blockNumber": 19532341, "user_data": {"max_fee": 8.5}}'
+        `;
+
+        exec(curlCommand, (error, stdout, stderr) => {
+            if (error) {
+                reject(`Execution error: ${error.message}`);
+                return;
+            }
+            if (stderr) {
+                console.warn(`Curl stderr (non-critical): ${stderr}`);
+            }
+            resolve(stdout);
+        });
+    });
+}
+
+// Example usage:
+async function fetchMetadataForAccounts () {
+    require("dotenv").config();
+
+    const Quicknode = process.env.Quicknode;
+
+    // console.log(Quicknode);
+    const API_KEY = Quicknode; // Replace with your actual API key
+
+    try {
+        const result = await fetchDataWithCurl(API_KEY);
+        let datum = JSON.parse(result);
+        console.log("API Response:", datum);
+        return datum.reals;
+    } catch (error) {
+        console.error("Failed to fetch data:", error);
+        return [];
+    }
+};
+
+module.exports = { fetchMetadataForAccounts }; 
+
+// Example usage:
+// (async () => {
+//     require("dotenv").config();
+
+//     const Quicknode = process.env.Quicknode;
+
+//     console.log(Quicknode);
+//     const API_KEY = Quicknode; // Replace with your actual API key
+
+//     try {
+//         const result = await fetchDataWithCurl(API_KEY);
+//         console.log("API Response:", JSON.parse(result));
+//     } catch (error) {
+//         console.error("Failed to fetch data:", error);
+//     }
+// })();
+
+
+
+
+
+/* // fetchMetadata.js
 const { Connection, PublicKey } = require("@solana/web3.js");
 const { deserialize } = require("borsh");
 require('dotenv').config();
@@ -59,4 +133,4 @@ async function fetchMetadataForAccounts(network="production") {
     }
 }
 
-module.exports = { fetchMetadataForAccounts };
+module.exports = { fetchMetadataForAccounts }; */

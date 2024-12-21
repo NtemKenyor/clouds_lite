@@ -244,7 +244,9 @@
 
         async function loadPosts() {
             try {
+                // const response = await fetch( window.NODE_URL+"/api/metadata");
                 const response = await fetch( window.NODE_URL+"/api/metadata");
+                // https://api.quicknode.com/functions/rest/v1/functions/383e033e-937a-4338-8e7a-129e357baed5/call
                 const data = await response.json();
 
                 console.log("Fetched Data:", data);
