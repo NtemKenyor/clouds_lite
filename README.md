@@ -1,6 +1,6 @@
 # CloudS: Decentralized Creativity and Free Speech Platform
 
-**Welcome to CloudS**, a decentralized platform that empowers creativity, free speech, and community engagement. Built on the **SOON Network** ([RPC Endpoint](https://rpc.devnet.soo.network/rpc)), CloudS is a safe and rewarding hub for content creators, journalists, and free-thinkers around the globe.
+**Welcome to CloudS**, a decentralized platform that empowers creativity, free speech, and community engagement. Built on the **quicknode Network** ([RPC Endpoint](https://spring-quick-surf.solana-devnet.quiknode.pro/016ff48f0f7c3f1520e515c01dca9a83ef528317)), CloudS is a safe and rewarding hub for content creators, journalists, and free-thinkers around the globe.
 
 ---
 
@@ -61,7 +61,7 @@ This directory handles the main operations of the platform:
 CloudS divides its operations into three core parts:
 
 1. **Backend**  
-   - Uses Node.js to interface with the SOON Network blockchain.
+   - Uses Node.js to interface with the quicknode Network blockchain.
    - Responsible for creating posts, fetching metadata, and managing contract interactions.
 
 2. **Frontend**  

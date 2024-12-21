@@ -6,7 +6,7 @@ const main = async (network) => {
     // Configure the client based on the selected network
     const connectionUrl = network === "devnet" ? "https://spring-quick-surf.solana-devnet.quiknode.pro/016ff48f0f7c3f1520e515c01dca9a83ef528317" : "http://127.0.0.1:8899";
     
-    const walletPath = "/home/kenyor/.config/solana/soon.json"; // Replace with your wallet keypair path
+    const walletPath = "/home/kenyor/.config/solana/quicknode.json"; // Replace with your wallet keypair path
     const keypair = anchor.web3.Keypair.fromSecretKey(
     Uint8Array.from(JSON.parse(fs.readFileSync(walletPath, "utf8")))
     );

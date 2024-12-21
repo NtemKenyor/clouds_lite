@@ -12,7 +12,7 @@ async function d_tester() {
         try {
 
             // Use the decrypted private key to create the user's Keypair
-            const walletPath = "/home/kenyor/.config/solana/soon.json";
+            const walletPath = "/home/kenyor/.config/solana/quicknode.json";
             // const walletPrivateKey = Uint8Array.from(JSON.parse(fs.readFileSync(walletPath, "utf8")));
             const userKeypair = Keypair.fromSecretKey(Uint8Array.from(JSON.parse(fs.readFileSync(walletPath, "utf8"))));
             // const metadata = new PostMetadata({ title, content, image_url, author, date, others });

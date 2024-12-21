@@ -18,7 +18,7 @@ const programId = new anchor.web3.PublicKey('7sGT7oBKSetii8mspduzWR8EeYq86z51v9B
 
 // Set the provider (usually a wallet)
 // Load your wallet keypair
-const walletPath = "/home/kenyor/.config/solana/soon.json"; // Replace with your wallet keypair path
+const walletPath = "/home/kenyor/.config/solana/quicknode.json"; // Replace with your wallet keypair path
 const keypair = anchor.web3.Keypair.fromSecretKey(
   Uint8Array.from(JSON.parse(fs.readFileSync(walletPath, "utf8")))
 );

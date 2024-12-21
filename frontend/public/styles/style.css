@@ -62,7 +62,7 @@ body {
     to {transform: translateY(-3000px);}
 }
 
-/* SOON Universe Logo */
+/* quicknode Universe Logo */
 .logo img {
     width: 250px;
     animation: fadeInLogo 2s ease-in-out;

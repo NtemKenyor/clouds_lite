@@ -18,13 +18,13 @@ const programId = new web3.PublicKey("7sGT7oBKSetii8mspduzWR8EeYq86z51v9BdwfkEW2
 // const walletPrivateKey = new Uint8Array(FILL_YOUR_WALLET_PRIVATE_KEY_HERE);
 
 
-// const walletPath = "/home/kenyor/.config/solana/soon.json"; 
+// const walletPath = "/home/kenyor/.config/solana/quicknode.json"; 
 // const walletPrivateKey = Uint8Array.from(JSON.parse(fs.readFileSync(walletPath, "utf8")))
 
 // Read the wallet private key from the JSON file
-const walletPath = "/home/kenyor/.config/solana/soon.json";
+const walletPath = "/home/kenyor/.config/solana/quicknode.json";
 const walletPrivateKey = Uint8Array.from(JSON.parse(fs.readFileSync(walletPath, "utf8")));
-// const walletPath = "/home/kenyor/.config/solana/soon.json"; // Replace with your wallet keypair path
+// const walletPath = "/home/kenyor/.config/solana/quicknode.json"; // Replace with your wallet keypair path
 // const keypair = anchor.web3.Keypair.fromSecretKey(
 //   Uint8Array.from(JSON.parse(fs.readFileSync(walletPath, "utf8")))
 // );

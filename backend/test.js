@@ -3,7 +3,7 @@ const { PublicKey, SystemProgram } = require("@solana/web3.js");
 const fs = require("fs");
 
 // Load your wallet keypair
-const walletPath = "/home/kenyor/.config/solana/soon.json"; // Replace with your wallet keypair path
+const walletPath = "/home/kenyor/.config/solana/quicknode.json"; // Replace with your wallet keypair path
 const keypair = anchor.web3.Keypair.fromSecretKey(
   Uint8Array.from(JSON.parse(fs.readFileSync(walletPath, "utf8")))
 );
