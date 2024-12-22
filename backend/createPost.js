@@ -49,6 +49,7 @@ async function createPost(userKeypair, metadata, network="production") {
     //https://spring-quick-surf.solana-devnet.quiknode.pro/016ff48f0f7c3f1520e515c01dca9a83ef528317
     // Serialize the metadata with the timestamp
     // const connection =new Connection("http://127.0.0.1:8899", "confirmed");
+    console.log("creating post: ", network );
 
     const serializedMetadata = serialize(postMetadataSchema, metadataWithUtc);
 
