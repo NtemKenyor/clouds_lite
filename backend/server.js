@@ -110,6 +110,8 @@ app.post(MAIN_DIR+"/api/create-post", async (req, res) => {
         // Use the decrypted private key to create the user's Keypair
         const userKeypair = Keypair.fromSecretKey(Uint8Array.from(JSON.parse(decryptedPrivateKey)));
         // const metadata = new PostMetadata({ title, content, image_url, author, date, others });
+        // console.log(userKeypair, dNetwork);
+
         const metadata = { title, content, image_url, author, date, others };
 
         // Proceed to create the post on the blockchain

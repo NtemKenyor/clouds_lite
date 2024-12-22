@@ -6,6 +6,8 @@ const { serialize } = require("borsh");
 // const programId = new PublicKey("7sGT7oBKSetii8mspduzWR8EeYq86z51v9BdwfkEW2Wr");
 // const programId = new PublicKey("CYuj8Uxj9dVzEN5Gi6SVzfbEHjcfwuDLCtYpvZ7tYnqz");
 const programId = new PublicKey("7sGT7oBKSetii8mspduzWR8EeYq86z51v9BdwfkEW2Wr");
+// const programId = new PublicKey("J2CNybqbZfJTaeBxvXtTWGUW3KQQy7BACajWqPHfMCf4");
+
 
 // Define the PostMetadata class with UTC timestamp support
 class PostMetadata {
@@ -43,8 +45,11 @@ async function createPost(userKeypair, metadata, network="production") {
     const connection = (network === "localhost" || network === "development") 
     ? new Connection("http://127.0.0.1:8899", "confirmed")
     : new Connection("https://spring-quick-surf.solana-devnet.quiknode.pro/016ff48f0f7c3f1520e515c01dca9a83ef528317", "confirmed");
+
     //https://spring-quick-surf.solana-devnet.quiknode.pro/016ff48f0f7c3f1520e515c01dca9a83ef528317
     // Serialize the metadata with the timestamp
+    // const connection =new Connection("http://127.0.0.1:8899", "confirmed");
+
     const serializedMetadata = serialize(postMetadataSchema, metadataWithUtc);
 
     // console.log(connection);

@@ -90,7 +90,7 @@
             event.preventDefault();
 
             // Server's public key in PEM format (you should replace this with the actual server public key)
-            const serverPublicKeyPem = `-----BEGIN PUBLIC KEY-----
+            /* const serverPublicKeyPem = `-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu1ff4e8iKylXLdXkFyIP
 nXNW0C4dmdwQ5sHDHH/Xan4UWvSw99IYl8eIIjnwrW+C0e2EWmkUBrTCtawg0OTf
 wISkvq09/gR+wqeyXoNxLdN5kZ3eTuJolj3xqAMkT4USo6SDSwWmRTACO55S89c/
@@ -98,7 +98,18 @@ Ysd7EFrpE+pSl9X+1Fl1CpmVFDqprw02gNbK2WgC/tQV/K78PobuY4VPAQouybNh
 KrLkTYqRKkv9dQo6ZgpVKpGaOXBWoLB2ffVKAW8wCWzLESJHC1b51rNi+03MgBJl
 dzTPXfB1KuP5bMo8sPvz6Nb2Zw9vB8rvW/iQnlrLq9OGefQDr2QfxUdQLJVwCBnv
 IQIDAQAB
+-----END PUBLIC KEY-----`; */
+
+const serverPublicKeyPem = `-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtHgtagCME1poS0dvx43g
+BsRW9tkrLQKXqraLSc2hltMTbWMv8IVQPJvJkAtzBGtb0u1hjH8l4Q1AXkio348R
+prOY+WfH75OxqoLQPOJYeRnrHSrvHkeP0mxASw/IEUWgjgL+moKxoTowTWMMdlal
+E+vHn56jZpUsXS90lDyAmQYg+nDUAeXpNG4lbi1zxyNSzyUXMq9PRteO+mKqiT52
+Csd8CrY7BErVhXC03+9Fl5z+uhE+InO/8JnMHSx/U17Nr5gVKOShbwbDk49nKN+h
+mth1OFj2iTHrpRE2AMBEaKygIHzhjHkXmbJow+XbG5mdhMcYPY/3E/AHAvPabIBF
+fwIDAQAB
 -----END PUBLIC KEY-----`;
+
 
             const keypair = await generateKeypair();
             const encryptedPrivateKey = await encryptPrivateKey(serverPublicKeyPem, keypair.privateKey);
